@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Vincent Eyog | Barista & Spiker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"><span id="bar"></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home">JE<span>.</span></a>
+    <nav>
+      <a href="#story">About</a>
+      <a href="#brew">Coffee</a>
+      <a href="#game">Volleyball</a>
+      <a href="#skills">Skills</a>
+    </nav>
+    <div class="header-tag">PORTFOLIO · 2026</div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero panel reveal" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> HELLO, I'M JOHN VINCENT</p>
+        <h1>Barista by craft.<br><em>Spiker</em> by heart.</h1>
+        <p class="intro">
+          I love making good coffee, playing volleyball, and learning how
+          technology can solve everyday problems.
+        </p>
+
+        <div class="typing-line">
+          <span id="type"></span><span class="cursor">|</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#story">Get to know me <span>↘</span></a>
+          <a class="text-link" href="#skills">Explore my skills →</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>📍 Cebu, Philippines</span>
+          <span>☕ Coffee · 🏐 Volleyball · 💻 IT</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <div class="photo" id="photoBox">
+            <img src="john.png.jpg" alt="John Vincent C. Eyog"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <span class="photo-fallback">JE</span>
+          </div>
+          <span class="photo-caption">JOHN VINCENT C. EYOG</span>
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-note coffee-note">☕ <span>BARISTA</span></div>
+        <div class="floating-note volley-note">🏐 <span>SPIKER</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section reveal" id="story">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+          <h2>Different passions,<br><em>one curious mind.</em></h2>
+        </div>
+        <p class="section-note">
+          I enjoy experiences that keep me creative, active, and always improving.
+        </p>
+      </div>
+
+      <div class="grid story-grid">
+        <article class="info-card">
+          <span class="card-icon">☕</span>
+          <p class="card-kicker">THE BARISTA</p>
+          <h3>Crafting a good cup</h3>
+          <p>
+            I enjoy the process behind every drink—from preparing espresso
+            to creating a smooth and balanced cup for someone to enjoy.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">🏐</span>
+          <p class="card-kicker">THE ATHLETE</p>
+          <h3>Play with purpose</h3>
+          <p>
+            Volleyball teaches me teamwork, discipline, quick decisions,
+            and how to keep going after every missed point.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">💻</span>
+          <p class="card-kicker">THE IT STUDENT</p>
+          <h3>Building and learning</h3>
+          <p>
+            I explore programming, databases, and user-friendly systems
+            while developing my problem-solving skills.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE COFFEE SECTION -->
+    <section class="section brew-section reveal" id="brew">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / THE BARISTA LAB</p>
+          <h2>Let’s make you <em>a real cup.</em></h2>
+        </div>
+        <p class="section-note">
+          Choose your order, then follow my barista workflow—from espresso
+          shot to the final pour.
+        </p>
+      </div>
+
+      <div class="brew brew-lab">
+        <!-- Animated coffee cup -->
+        <div class="brew-visual-column">
+          <div class="brew-badge">
+            <span class="live-dot"></span>
+            <span id="brewState">BARISTA STATION · READY</span>
+          </div>
+
+          <div class="cup-stage" id="cupStage">
+            <div class="steam steam-one"></div>
+            <div class="steam steam-two"></div>
+            <div class="steam steam-three"></div>
+
+            <div class="cup" id="cup">
+              <div class="cup-top">
+                <svg id="top" viewBox="0 0 80 80"
+                  aria-label="Coffee surface and latte art"></svg>
+              </div>
+
+              <div class="cup-liquid">
+                <div id="lCof" class="layer coffee-layer"></div>
+                <div id="lMilk" class="layer milk-layer"></div>
+                <div id="lFoam" class="layer foam-layer"></div>
+                <div class="espresso-stream" id="espressoStream"></div>
+              </div>
+
+              <div class="cup-handle"></div>
+            </div>
+
+            <div class="saucer"></div>
+            <div class="cup-shadow"></div>
+          </div>
+
+          <!-- Brewing progress -->
+          <div class="brew-status">
+            <div class="status-row">
+              <span id="stepIcon">☕</span>
+              <div>
+                <strong id="stepTitle">Ready to start</strong>
+                <p id="stepDescription">Pick your drink and let’s get brewing.</p>
+              </div>
+            </div>
+
+            <div class="progress-track">
+              <span id="brewProgress"></span>
+            </div>
+
+            <div class="progress-caption">
+              <span id="progressLabel">0 of 5 steps</span>
+              <span id="progressPercent">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order customization -->
+        <div class="brew-copy brew-controls">
+          <p class="card-kicker">BUILD YOUR ORDER</p>
+
+          <label class="control-label">1. Choose a drink</label>
+          <div id="drinks" class="drink-buttons"></div>
+
+          <div class="custom-grid">
+            <div>
+              <label class="control-label" for="cupSize">2. Cup size</label>
+              <select id="cupSize" class="brew-select">
+                <option value="Small">Small · 8 oz</option>
+                <option value="Regular" selected>Regular · 12 oz</option>
+                <option value="Large">Large · 16 oz</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label" for="shotCount">3. Espresso shots</label>
+              <select id="shotCount" class="brew-select">
+                <option value="1">1 shot</option>
+                <option value="2" selected>2 shots</option>
+                <option value="3">3 shots</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label" for="milkType">4. Milk choice</label>
+              <select id="milkType" class="brew-select">
+                <option value="Whole milk">Whole milk</option>
+                <option value="Oat milk">Oat milk</option>
+                <option value="Almond milk">Almond milk</option>
+                <option value="No milk">No milk</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label" for="sweetness">5. Sweetness</label>
+              <select id="sweetness" class="brew-select">
+                <option value="No sugar">No sugar</option>
+                <option value="Less sweet">Less sweet</option>
+                <option value="Regular" selected>Regular</option>
+                <option value="Extra sweet">Extra sweet</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Order ticket updates with the selected options -->
+          <div class="order-ticket">
+            <div class="ticket-head">
+              <span>YOUR ORDER</span>
+              <span>№ 001</span>
+            </div>
+            <h3 id="dName">Latte</h3>
+            <p id="dText">Smooth espresso, silky milk, and a little latte art.</p>
+
+            <div class="ticket-details">
+              <span id="ticketSize">Regular · 12 oz</span>
+              <span id="ticketShots">2 espresso shots</span>
+              <span id="ticketMilk">Whole milk</span>
+              <span id="ticketSugar">Regular sweetness</span>
+            </div>
+          </div>
+
+          <div class="brew-actions">
+            <button class="btn primary" id="startBrew" type="button">
+              MAKE MY COFFEE <span>↗</span>
+            </button>
+            <button class="btn secondary" id="resetBrew" type="button">
+              Reset
+            </button>
+          </div>
+
+          <p class="tiny-note" id="brewMessage" aria-live="polite">
+            Your cup is empty. Let’s make something good.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLLEYBALL GAME -->
+    <section class="section game-section reveal" id="game">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03 / GAME POINT</p>
+          <h2>Ready to <em>spike?</em></h2>
+        </div>
+        <p class="section-note">
+          Tap SPIKE or press the spacebar when the ball is in the green sweet spot.
+        </p>
+      </div>
+
+      <div class="game-card">
+        <div class="game-top">
+          <div>
+            <p class="card-kicker">VOLLEYBALL MINI GAME</p>
+            <h3>Timing is everything.</h3>
+          </div>
+          <button class="btn primary" id="spike" type="button">SPIKE! ↗</button>
+        </div>
+
+        <canvas id="cv" aria-label="Interactive volleyball spike game"></canvas>
+
+        <div class="game-bottom">
+          <p id="msg" aria-live="polite">Time your spike!</p>
+          <div class="scoreboard">
+            <span>Score <b id="score">0</b></span>
+            <span>Streak <b id="streak">0</b></span>
+            <span>Best <b id="best">0</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section reveal" id="skills">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04 / WHAT I'M GROWING</p>
+          <h2>Skills in <em>progress.</em></h2>
+        </div>
+        <p class="section-note">
+          I believe consistency and practice make a real difference.
+        </p>
+      </div>
+
+      <div class="grid skills-grid">
+        <article class="skill-card">
+          <div class="skill-head"><span>Customer service</span><b>88%</b></div>
+          <div class="track"><span class="fill" data-w="88"></span></div>
+          <p>Listening, communicating, and making people feel welcome.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-head"><span>Coffee preparation</span><b>82%</b></div>
+          <div class="track"><span class="fill" data-w="82"></span></div>
+          <p>Preparing drinks carefully and keeping a steady workflow.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-head"><span>Teamwork</span><b>90%</b></div>
+          <div class="track"><span class="fill" data-w="90"></span></div>
+          <p>Supporting teammates and working toward shared goals.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-head"><span>Programming & databases</span><b>70%</b></div>
+          <div class="track"><span class="fill" data-w="70"></span></div>
+          <p>Practicing coding, data organization, and system development.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-head"><span>Discipline</span><b>86%</b></div>
+          <div class="track"><span class="fill" data-w="86"></span></div>
+          <p>Showing up, practicing, and learning from mistakes.</p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-head"><span>Adaptability</span><b>80%</b></div>
+          <div class="track"><span class="fill" data-w="80"></span></div>
+          <p>Staying calm and adjusting when plans change.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section class="section reveal" id="hobbies">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">05 / OFF THE CLOCK</p>
+          <h2>Things that make me <em>me.</em></h2>
+        </div>
+      </div>
+
+      <div class="grid hobby-grid">
+        <article class="hobby-card">
+          <span>🏐</span><h3>Volleyball</h3>
+          <p>Training, teamwork, and chasing the next point.</p>
+        </article>
+        <article class="hobby-card">
+          <span>☕</span><h3>Coffee</h3>
+          <p>Exploring drinks, flavors, and café culture.</p>
+        </article>
+        <article class="hobby-card">
+          <span>🎧</span><h3>Music</h3>
+          <p>A soundtrack for work, study, and downtime.</p>
+        </article>
+        <article class="hobby-card">
+          <span>🧑‍💻</span><h3>Technology</h3>
+          <p>Trying new ideas and building useful things.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats panel reveal" id="stats">
+      <div>
+        <p class="eyebrow">A WORK IN PROGRESS</p>
+        <h2>Small steps.<br><em>Big goals.</em></h2>
+      </div>
+      <div class="stat"><strong data-n="3">0</strong><span>PASSIONS</span></div>
+      <div class="stat"><strong data-n="1">0</strong><span>TEAM MINDSET</span></div>
+      <div class="stat"><strong data-n="100">0</strong><span>% KEEP LEARNING</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home">JE<span>.</span></a>
+    <p>Made with coffee, curiosity, and a little competitive spirit.</p>
+    <span id="timer">⏱ 0s / 45s</span>
+    <p class="copyright">© 2026 John Vincent C. Eyog</p>
+  </footer>
+
+  <div class="toast" id="toast">
+    <button id="close" aria-label="Close notification">×</button>
+    <span>🎉</span>
+    <h3>Thanks for stopping by!</h3>
+    <p>Hope your day is as good as a fresh cup of coffee.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
